@@ -4,6 +4,9 @@
 import { useState, useEffect } from 'react';
 import type { Country } from '../types/Country';
 
+// Key
+const API_KEY = import.meta.env.VITE_COUNTRIES_API_KEY;
+
 export default function useCountries() {
     // Three state variables
 
@@ -23,7 +26,11 @@ export default function useCountries() {
             try {
                 // Send request to REST Countries API
                 const response = await fetch('https://api.restcountries.com/countries/v5?limit=100&pretty=1',
-                { signal: controller.signal });
+                { signal: controller.signal,
+                  headers: {
+                    Authorization: `Bearer ${API_KEY}`,
+                  },
+                 });
 
                 // Check if request went through
                 if (!response.ok) {
