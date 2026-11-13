@@ -2,6 +2,7 @@
 
 // Import
 import useCountries from './hooks/useCountries';
+import CountryCard from './components/CountryCard';
 
 export default function App() {
   // Values from hook, destructured
@@ -22,11 +23,7 @@ export default function App() {
     <h1>Open World Search</h1>
     {/* For every country in this array, create this */}
     {countries.map((country) => (
-      <div key={country.ccn3}>
-        <img src={country.flags.svg} alt={`Flag of ${country.name.common}`} />
-        <h2>{country.name.common}</h2>
-
-      </div>
+      <CountryCard country={country} key={country.ccn3} />
       
     ))}
     
