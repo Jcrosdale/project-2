@@ -1,3 +1,6 @@
+// Fetch country data
+
+// Imports
 import { useState, useEffect } from 'react';
 import type { Country } from '../types/Country';
 
