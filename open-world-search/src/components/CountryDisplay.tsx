@@ -14,9 +14,9 @@ export default function CountryDisplay({ countries }: CountryDisplayProps) {
     })
 
     return (
-        <>
+        <div id='country-list'>
             <h1>List of Countries</h1>
             {countryList}
-        </>
+        </div>
     )
 }

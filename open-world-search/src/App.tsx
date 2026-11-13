@@ -29,9 +29,9 @@ export default function App() {
     const matchesSearch = country.name.common.toLowerCase().includes(searchTerm.toLowerCase());
 
     const matchesRegion = selectedRegion === '' || country.region === selectedRegion;
-    
+
     return matchesSearch && matchesRegion;
-});
+  });
 
 
   // Check if loading
@@ -46,14 +46,20 @@ export default function App() {
 
   return (
     <>
-    <Header onToggle={handleThemeToggle} isDark={isDark}/>
-    <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-    <RegionFilter selectedRegion={selectedRegion} onRegionChange={setSelectedRegion}/>
-    {/* For every country in this array, create this */}
-    <CountryDisplay countries={filteredCountries} />
-    
-    
-    
+      <Header onToggle={handleThemeToggle} isDark={isDark} />
+      <main>
+        <section id='search-section'>
+          <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+          <RegionFilter selectedRegion={selectedRegion} onRegionChange={setSelectedRegion} />
+        </section>
+      </main>
+
+
+      {/* For every country in this array, create this */}
+      <CountryDisplay countries={filteredCountries} />
+
+
+
     </>
   )
 }
