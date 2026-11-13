@@ -1,12 +1,13 @@
 // Switch between dark and light mode
 interface ThemeToggleProps {
     onToggle: () => void;
+    isDark: boolean;
 }
 
-export default function ThemeToggle({ onToggle }: ThemeToggleProps) {
+export default function ThemeToggle({ onToggle, isDark }: ThemeToggleProps) {
     return (
         <button id="theme-switch" onClick={onToggle}>
-            Dark Mode
+            {isDark ? 'Light Mode' : 'Dark Mode'}
         </button>
     )
 }
