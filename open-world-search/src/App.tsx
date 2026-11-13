@@ -2,7 +2,7 @@
 
 // Import
 import useCountries from './hooks/useCountries';
-import CountryCard from './components/CountryCard';
+import CountryDisplay from './components/CountryDisplay';
 
 export default function App() {
   // Values from hook, destructured
@@ -22,10 +22,8 @@ export default function App() {
     <>
     <h1>Open World Search</h1>
     {/* For every country in this array, create this */}
-    {countries.map((country) => (
-      <CountryCard country={country} key={country.ccn3} />
-      
-    ))}
+    <CountryDisplay countries={countries}></CountryDisplay>
+    
     
     </>
   )
