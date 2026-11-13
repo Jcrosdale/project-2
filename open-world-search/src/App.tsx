@@ -3,6 +3,7 @@
 // Import
 import useCountries from './hooks/useCountries';
 import CountryDisplay from './components/CountryDisplay';
+import Header from './components/Header';
 
 export default function App() {
   // Values from hook, destructured
@@ -20,7 +21,7 @@ export default function App() {
 
   return (
     <>
-    <h1>Open World Search</h1>
+    <Header />
     {/* For every country in this array, create this */}
     <CountryDisplay countries={countries}></CountryDisplay>
     

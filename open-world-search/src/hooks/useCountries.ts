@@ -38,10 +38,14 @@ export default function useCountries() {
                 }
                     
                 // Get data from response
-                const json: Country[] = await response.json();
+                const json = await response.json();
+
+                console.log('API Response', json)
+                console.log('Is this an array?', Array.isArray(json))
 
                 // Save country data in state
-                setCountries(json);
+                setCountries(json.data.objects);
+
             } catch (err) {
                 // Handle errors
                 if (err instanceof Error && err.name !== 'AbortError') {
