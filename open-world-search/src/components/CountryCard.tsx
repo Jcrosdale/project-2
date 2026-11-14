@@ -10,7 +10,11 @@ export default function CountryCard({ country }: CountryCardProps) {
     
     return (
         <div className='country-card'>
-            <img src={country.flag.svg} alt={`Flag of ${country.names.official}`} />
+            {country.flag.url_svg && (
+                <img src={country.flag.url_svg} 
+                     alt={`Flag of ${country.names.official}`}
+                />
+            )}
             <h2>{country.names.common}</h2>
         </div>
     )

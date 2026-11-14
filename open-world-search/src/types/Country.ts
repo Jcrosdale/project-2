@@ -7,8 +7,8 @@ export interface Country {
     };
 
     flag: {
-        png: string;
-        svg: string;
+        url_png: string;
+        url_svg: string;
     };
 
     population: number;
