@@ -14,5 +14,5 @@ export interface Country {
     population: number;
     region: string;
     capitals?: string[]; // Some have multiple capitals or none
-    ccn3: string; // For React keys
+    uuid: string; // For React keys
 }

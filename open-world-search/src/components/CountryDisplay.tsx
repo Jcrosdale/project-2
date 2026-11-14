@@ -10,7 +10,7 @@ interface CountryDisplayProps {
 
 export default function CountryDisplay({ countries }: CountryDisplayProps) {
     const countryList = countries.map(country => {
-        return <CountryCard key={country.ccn3} country={country} />
+        return <CountryCard key={country.uuid} country={country} />
     })
 
     return (
