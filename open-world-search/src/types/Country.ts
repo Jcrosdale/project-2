@@ -1,12 +1,12 @@
 // Describe structure of country data
 
 export interface Country {
-    name: {
+    names: {
         common: string;
         official: string;
     };
 
-    flags: {
+    flag: {
         png: string;
         svg: string;
     };

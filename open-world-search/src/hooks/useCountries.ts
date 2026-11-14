@@ -9,7 +9,6 @@ const API_KEY = import.meta.env.VITE_COUNTRIES_API_KEY;
 
 export default function useCountries() {
     // Three state variables
-
     // Store country data from API
     const [countries, setCountries] = useState<Country[]>([]);
 
@@ -39,10 +38,7 @@ export default function useCountries() {
                     
                 // Get data from response
                 const json = await response.json();
-
-                console.log('API Response', json)
-                console.log('Is this an array?', Array.isArray(json))
-
+                
                 // Save country data in state
                 setCountries(json.data.objects);
 
