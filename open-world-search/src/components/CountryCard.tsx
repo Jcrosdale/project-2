@@ -16,6 +16,9 @@ export default function CountryCard({ country }: CountryCardProps) {
                 />
             )}
             <h2>{country.names.common}</h2>
+            <p>Population: {country.population.toLocaleString()}</p>
+            <p>Region: {country.region}</p>
+            <p>Capital: {country.capitals?.map(capital => capital.name).join(', ') || 'N/A'}</p>
         </div>
     )
 }

@@ -34,7 +34,7 @@ export default function App() {
 
     return matchesSearch && matchesRegion;
   });
-
+  
 
   // Check if loading
   if (loading) {

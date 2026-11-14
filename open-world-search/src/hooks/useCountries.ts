@@ -39,7 +39,7 @@ export default function useCountries() {
                 // Get data from response
                 const json = await response.json();
                 
-                console.log('Flag:', json.data.objects[0].flag);
+                console.log('Capitals:', json.data.objects[0].capitals)
                 // Save country data in state
                 setCountries(json.data.objects);
 
