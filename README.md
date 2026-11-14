@@ -6,3 +6,4 @@ Challenges I faced included successfully fetching data from the API. There were 
 
 If I had more time, I would improve the application's responsive styling with ARIA attributes or run through accessibility standards. I also would have added additional conditional rendering for flag images that weren't loading. I would also try using more properties in the API to add more information and personalization to the application.
 
+Deployed Server: https://preeminent-flan-78cbfd.netlify.app/
