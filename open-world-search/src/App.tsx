@@ -1,25 +1,27 @@
 // Connect custom hook to App
 
 // Import
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import useCountries from './hooks/useCountries';
 import CountryDisplay from './components/CountryDisplay';
 import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import RegionFilter from './components/RegionFilter';
+import { ThemeContext } from './context/ThemeContext';
 
 
 export default function App() {
   // Values from hook, destructured
   const { countries, loading, error } = useCountries();
-  const [isDark, setIsDark] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('');
+  const context = useContext(ThemeContext)
 
-  // Handler theme toggle
-  const handleThemeToggle = () => {
-    setIsDark(prevDark => !prevDark);
+  if (!context) {
+    throw new Error('App must be within ThemeProvider');
   }
+
+  const { isDark } = context;
 
   useEffect(() => {
     document.body.classList.toggle('dark-mode', isDark);
@@ -46,19 +48,15 @@ export default function App() {
 
   return (
     <>
-      <Header onToggle={handleThemeToggle} isDark={isDark} />
+      <Header />
       <main>
         <section id='search-section'>
           <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
           <RegionFilter selectedRegion={selectedRegion} onRegionChange={setSelectedRegion} />
         </section>
+        {/* For every country in this array, create this */}
+        <CountryDisplay countries={filteredCountries} />
       </main>
-
-
-      {/* For every country in this array, create this */}
-      <CountryDisplay countries={filteredCountries} />
-
-
 
     </>
   )
